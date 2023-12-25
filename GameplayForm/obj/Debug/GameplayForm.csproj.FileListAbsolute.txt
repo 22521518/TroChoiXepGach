@@ -1,0 +1,11 @@
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\bin\Debug\GameplayForm.exe.config
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\bin\Debug\GameplayForm.exe
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\bin\Debug\GameplayForm.pdb
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.csproj.AssemblyReference.cache
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.csproj.SuggestedBindingRedirects.cache
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.GameplayWindow.resources
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.Properties.Resources.resources
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.csproj.GenerateResource.cache
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.csproj.CoreCompileInputs.cache
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.exe
+D:\CODE\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\GameplayForm.pdb
