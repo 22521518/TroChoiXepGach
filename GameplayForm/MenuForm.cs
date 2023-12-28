@@ -42,14 +42,12 @@ namespace WindowForm
             LeaderBoardForm ldform = new LeaderBoardForm();
             ldform.ShowDialog();
         }
-        private void StartLabel_Click(object sender, EventArgs e)
+        async private void StartLabel_Click(object sender, EventArgs e)
         {
-            Task runEffect = Task.Run(() =>
-            {
-                MainWindow.Music.MouseEffect.controls.play();
-            });
-            
-            runEffect.Wait();
+            MainWindow.Music.MouseEffect.controls.play();
+            await Task.Delay(MainWindow.Music.MouseEffectDuration / 5);
+            MainWindow.Music.MouseEffect.controls.pause();
+
 
             InputForm inputForm = new InputForm();
             if (inputForm.ShowDialog() == DialogResult.OK)

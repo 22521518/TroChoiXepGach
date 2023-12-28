@@ -95,7 +95,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Margin = new System.Windows.Forms.Padding(16);
             this.Name = "MenuForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TRÒ CHƠI XẾP GẠCH";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.SettingIcon)).EndInit();

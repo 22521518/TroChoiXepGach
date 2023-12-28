@@ -120,7 +120,8 @@ namespace GameComponent.Game
             RowBeneath1 = Human.Body[1].Row + 1;
             ColumnBeneath1 = Human.Body[1].Column;
 
-            return !Grid.IsEmpty(RowBeneath, ColumnBeneath) || !Grid.IsEmpty(RowBeneath1, ColumnBeneath1);
+            Human.IsLanded = !Grid.IsEmpty(RowBeneath, ColumnBeneath) || !Grid.IsEmpty(RowBeneath1, ColumnBeneath1);
+            return Human.IsLanded;
         }
         public bool Fall(int g)
         {
@@ -135,7 +136,7 @@ namespace GameComponent.Game
         }
         public void TakeBlock()
         {
-            if (Human.Hold)
+            if (Hold != null)
                 return;
             if (Human.Body[1].Column == 9 && !Human.IsLeft)
                 return;
@@ -148,11 +149,11 @@ namespace GameComponent.Game
                 return;
             Grid[Human.Body[1].Row, Human.Body[1].Column + block] = 0;
             Grid.DropColumn(Human.Body[1].Row, Human.Body[1].Column + block);
-            Human.Hold = true;
+            Hold = new DoteBlock();
         }
         public void DropBlock()
         {
-            if (!Human.Hold)
+            if (Hold == null)
                 return;
             if (Human.Body[1].Column == 9 && !Human.IsLeft)
                 return;
@@ -167,7 +168,7 @@ namespace GameComponent.Game
                     if (p.Row == Human.Body[1].Row && p.Column == Human.Body[1].Column + block)
                         return;
             Grid[Human.Body[1].Row, Human.Body[1].Column + block] = 1;
-            Human.Hold = false;
+            Hold = null;
         }
         public override int PlaceBlock()
         {

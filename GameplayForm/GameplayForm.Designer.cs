@@ -40,7 +40,7 @@
             this.WallLeft = new System.Windows.Forms.PictureBox();
             this.Ground = new System.Windows.Forms.PictureBox();
             this.MoveTimer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BlockBox = new System.Windows.Forms.PictureBox();
             this.DelayKey = new System.Windows.Forms.Timer(this.components);
             this.PlaceBlock = new System.Windows.Forms.Timer(this.components);
             this.Clear = new System.Windows.Forms.Timer(this.components);
@@ -51,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WallRight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WallLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockBox)).BeginInit();
             this.SuspendLayout();
             // 
             // Score
@@ -158,13 +158,13 @@
             this.MoveTimer.Interval = 50;
             this.MoveTimer.Tick += new System.EventHandler(this.MoveTimer_Tick);
             // 
-            // pictureBox1
+            // BlockBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(549, 549);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 128);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.BlockBox.Location = new System.Drawing.Point(549, 549);
+            this.BlockBox.Name = "BlockBox";
+            this.BlockBox.Size = new System.Drawing.Size(128, 128);
+            this.BlockBox.TabIndex = 28;
+            this.BlockBox.TabStop = false;
             // 
             // DelayKey
             // 
@@ -200,7 +200,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 800);
             this.Controls.Add(this.Line);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.BlockBox);
             this.Controls.Add(this.Score);
             this.Controls.Add(this.LineLabel);
             this.Controls.Add(this.FirePicBox);
@@ -218,7 +218,7 @@
             this.MaximumSize = new System.Drawing.Size(765, 800);
             this.MinimumSize = new System.Drawing.Size(765, 800);
             this.Name = "GameplayForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TRÒ CHƠI XẾP GẠCH";
             this.Activated += new System.EventHandler(this.GameplayForm_Activated);
             this.Deactivate += new System.EventHandler(this.GameplayForm_Deactivate);
@@ -233,7 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.WallRight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WallLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlockBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,7 +250,7 @@
         private System.Windows.Forms.PictureBox WallLeft;
         private System.Windows.Forms.PictureBox Ground;
         public System.Windows.Forms.Timer MoveTimer;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox BlockBox;
         private System.Windows.Forms.Timer DelayKey;
         private System.Windows.Forms.Timer PlaceBlock;
         private System.Windows.Forms.Timer Clear;

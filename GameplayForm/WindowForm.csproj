@@ -68,6 +68,12 @@
     <Compile Include="Assets\CustomFont.cs" />
     <Compile Include="Assets\CustomImage.cs" />
     <Compile Include="Assets\Sound.cs" />
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GameplayForm.cs">
       <SubType>Form</SubType>
     </Compile>

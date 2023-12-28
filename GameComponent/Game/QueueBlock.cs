@@ -20,10 +20,10 @@ namespace GameComponent.Game
             new ZBlock()
        };
         readonly Random random = new Random();
-        public Block nextBlock { get; private set; }
+        public Block NextBlock { get; set; }
         public QueueBlock()
         {
-            nextBlock = RandomBlock();
+            NextBlock = RandomBlock();
         }
         Block RandomBlock()
         {
@@ -31,12 +31,12 @@ namespace GameComponent.Game
         }
         public Block GetBlock(bool random = false)
         {
-            Block temp = nextBlock;
+            Block temp = NextBlock;
             do
             {
-                nextBlock = RandomBlock();
-            } while (nextBlock.Id == temp.Id);
-            nextBlock.Reset(random);
+                NextBlock = RandomBlock();
+            } while (NextBlock.Id == temp.Id);
+            NextBlock.Reset(random);
             return temp;
         }
 

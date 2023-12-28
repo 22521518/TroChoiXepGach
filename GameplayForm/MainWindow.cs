@@ -29,6 +29,7 @@ namespace WindowForm
         public MainWindow()
         {
             InitializeComponent();
+
             foreach (Control control in this.Controls)
             {
                 MdiClient client = control as MdiClient;
@@ -38,6 +39,7 @@ namespace WindowForm
                     break;
                 }
             }
+            
             menuForm.MdiParent = this;
             modeForm.MdiParent = this;
             gameplayForm.MdiParent = this;
@@ -63,7 +65,7 @@ namespace WindowForm
         {
             src.Hide();
             src.KeyPreview = false;
-            
+
             dest.StartPosition = FormStartPosition.CenterScreen;
             dest.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             dest.Show();

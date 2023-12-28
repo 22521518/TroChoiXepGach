@@ -10,7 +10,9 @@ namespace WindowForm.Assets
     public class Sound
     {
         public WindowsMediaPlayer MenuBackground;
+        public int MenuBackgroundDuration = 148500;
         public WindowsMediaPlayer MouseEffect;
+        public int MouseEffectDuration = 10;
 
         public Sound()
         {

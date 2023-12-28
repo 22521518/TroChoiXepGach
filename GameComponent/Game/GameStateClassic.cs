@@ -84,11 +84,25 @@ namespace GameComponent.Game
                 drop = System.Math.Min(drop, DropDistance(p));
             return drop;
         }
-
         public int Drop()
         {
             _currentblock.Move(BlockDropDistance(), 0);
             return PlaceBlock();
+        }
+        public void HoldBlock()
+        {
+            if (Hold != null)
+                return;
+            Hold = _currentblock;
+            _currentblock = Queue.GetBlock();
+        }
+        public void ChangeBlock()
+        {
+            if (Hold == null)
+                return;
+            Queue.NextBlock = _currentblock;
+            _currentblock = Hold;
+            Hold = null;
         }
     }
 }

@@ -15,11 +15,12 @@ namespace GameComponent.Game
             new int[] {12, 11, 10, 8, 6},
         
         };
+        protected Block _currentblock;
         public int Level = 0;
         int[] ComboScore = {50, 100, 250, 600 };
-        protected Block _currentblock;
         public int Score { get; protected set; }
         public int Line { get; protected set; }
+        public Block Hold { get; protected set; }
         public bool GameOver { get; protected set; }
         public GameGrid Grid { get; }
         public QueueBlock Queue { get; }

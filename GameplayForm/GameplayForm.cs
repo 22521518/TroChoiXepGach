@@ -135,9 +135,14 @@ namespace WindowForm
                     playerY = GridY + (r - 19) + gsh.Human.JumpSteps * CellSize / 4;
                     playerX = GridX + c + gsh.Human.Steps * CellSize / 4;
                 }
-                g.DrawImage(Img.Human, playerX, playerY, 
+                g.DrawImage(Img.Human, playerX, playerY + 10, 
                     new Rectangle(ColumnHuman * 36, RowHuman * 55, 36, 55), GraphicsUnit.Pixel);
             }
+            if (GamePlay.Hold == null)
+                BlockBox.Image = null;
+            else
+                //BlockBox.Image = Image.FromFile(@"");
+                BlockBox.BackColor = Color.White;
         }
         private void GameplayForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -209,6 +214,16 @@ namespace WindowForm
                             this.Clear.Enabled = true;
                         }
                         break;
+                    case Keys.C:
+                        if (gtclassic.Hold == null)
+                        {
+                            gtclassic.HoldBlock();
+                        }
+                        else
+                        {
+                            gtclassic.ChangeBlock();
+                        }
+                        break;
                     default:
                         return;
                 }
@@ -237,7 +252,7 @@ namespace WindowForm
                     }
                     break;
                 case Keys.Space:
-                    if (gthuman.Human.Hold)
+                    if (gthuman.Hold != null)
                     {
                         gthuman.DropBlock();
                     }
@@ -269,7 +284,7 @@ namespace WindowForm
                     }
                     break;
                 case Keys.ControlKey:
-                    if (gspvp.Human.Hold)
+                    if (gspvp.Hold != null)
                     {
                         gspvp.DropBlock();
                     }
@@ -405,7 +420,7 @@ namespace WindowForm
                 }
                 HumanJump--;
             }
-            else if (!gshuman.Human.IsLanded)
+            else if (!gshuman.IsOnLand())
             {
                 //Human animation
                 for (int i = 0; i < HumanFall; i++)
@@ -477,7 +492,7 @@ namespace WindowForm
                 }
                 HumanJump--;
             }
-            else if(!gspvp.Human.IsLanded)
+            else if(!gspvp.IsOnLand())
             {
                 //Human animation
                 ColumnHuman = 13 + 4 + HumanFall % 2;
@@ -530,6 +545,9 @@ namespace WindowForm
                 case Keys.Left:
                 case Keys.Right:
                     e.IsInputKey = true;
+                    break;
+                case Keys.Alt:
+                    e.IsInputKey =true; 
                     break;
             }
         }

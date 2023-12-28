@@ -83,6 +83,7 @@
     <Compile Include="Game\IQueueBlock.cs" />
     <Compile Include="Game\Object\Block.cs" />
     <Compile Include="Game\Object\Character.cs" />
+    <Compile Include="Game\Object\DoteBlock.cs" />
     <Compile Include="Game\Object\IBlock.cs" />
     <Compile Include="Game\Object\IBlockAction.cs" />
     <Compile Include="Game\Object\ICharacterAction.cs" />

@@ -15,10 +15,8 @@ namespace GameComponent.Game.Object
         public int JumpSteps { get => _jumpsteps; }
         public bool IsLanded = true;
         public bool IsLeft { get; private set; }
-        public bool Hold { set; get; }
         public Character(int x = 21, int y = 4)
         {
-            Hold = false;
             IsLeft = true;
             IsLanded = true;
             Body[0] = Body[1] = Body[2] = Body[3] = new Position(x, y);
