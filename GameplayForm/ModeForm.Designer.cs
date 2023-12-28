@@ -43,7 +43,7 @@
             this.TwoPersonButton.Name = "TwoPersonButton";
             this.TwoPersonButton.Size = new System.Drawing.Size(162, 45);
             this.TwoPersonButton.TabIndex = 23;
-            this.TwoPersonButton.Text = "2 Persons";
+            this.TwoPersonButton.Text = "2 Players";
             this.TwoPersonButton.UseVisualStyleBackColor = true;
             this.TwoPersonButton.Click += new System.EventHandler(this.TwoPersonButton_Click);
             // 
@@ -56,7 +56,7 @@
             this.OnePersonButton.Name = "OnePersonButton";
             this.OnePersonButton.Size = new System.Drawing.Size(162, 45);
             this.OnePersonButton.TabIndex = 22;
-            this.OnePersonButton.Text = "1 Person";
+            this.OnePersonButton.Text = "1 Player";
             this.OnePersonButton.UseVisualStyleBackColor = true;
             this.OnePersonButton.Click += new System.EventHandler(this.OnePersonButton_Click);
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.TitleLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 43.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.Margin = new System.Windows.Forms.Padding(16);
             this.MaximumSize = new System.Drawing.Size(580, 337);
             this.MinimumSize = new System.Drawing.Size(580, 337);
             this.Name = "ModeForm";

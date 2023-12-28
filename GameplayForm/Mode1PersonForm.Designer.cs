@@ -94,7 +94,8 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.TitleLabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 43.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(16);
             this.Name = "Mode1PersonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Mode1PersonForm";
