@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameplayForm));
             this.Score = new System.Windows.Forms.Label();
-            this.LineLabel = new System.Windows.Forms.Label();
             this.FirePicBox = new System.Windows.Forms.PictureBox();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.PenguinPicBox = new System.Windows.Forms.PictureBox();
@@ -59,24 +58,12 @@
             this.Score.BackColor = System.Drawing.Color.Black;
             this.Score.Font = new System.Drawing.Font("Segoe UI Emoji", 20F);
             this.Score.ForeColor = System.Drawing.Color.White;
-            this.Score.Location = new System.Drawing.Point(506, 117);
+            this.Score.Location = new System.Drawing.Point(477, 117);
             this.Score.Name = "Score";
-            this.Score.Size = new System.Drawing.Size(213, 58);
+            this.Score.Size = new System.Drawing.Size(242, 58);
             this.Score.TabIndex = 26;
             this.Score.Text = "0";
             this.Score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LineLabel
-            // 
-            this.LineLabel.BackColor = System.Drawing.Color.Black;
-            this.LineLabel.Font = new System.Drawing.Font("Segoe UI Emoji", 8F);
-            this.LineLabel.ForeColor = System.Drawing.Color.Violet;
-            this.LineLabel.Location = new System.Drawing.Point(580, 385);
-            this.LineLabel.Name = "LineLabel";
-            this.LineLabel.Size = new System.Drawing.Size(68, 33);
-            this.LineLabel.TabIndex = 25;
-            this.LineLabel.Text = "Line: ";
-            this.LineLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FirePicBox
             // 
@@ -160,7 +147,7 @@
             // 
             // BlockBox
             // 
-            this.BlockBox.Location = new System.Drawing.Point(549, 549);
+            this.BlockBox.Location = new System.Drawing.Point(537, 553);
             this.BlockBox.Name = "BlockBox";
             this.BlockBox.Size = new System.Drawing.Size(128, 128);
             this.BlockBox.TabIndex = 28;
@@ -186,9 +173,9 @@
             this.Line.BackColor = System.Drawing.Color.Black;
             this.Line.Font = new System.Drawing.Font("Segoe UI Emoji", 8F);
             this.Line.ForeColor = System.Drawing.Color.Violet;
-            this.Line.Location = new System.Drawing.Point(639, 386);
+            this.Line.Location = new System.Drawing.Point(603, 386);
             this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(68, 33);
+            this.Line.Size = new System.Drawing.Size(104, 33);
             this.Line.TabIndex = 29;
             this.Line.Text = "0";
             this.Line.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,7 +189,6 @@
             this.Controls.Add(this.Line);
             this.Controls.Add(this.BlockBox);
             this.Controls.Add(this.Score);
-            this.Controls.Add(this.LineLabel);
             this.Controls.Add(this.FirePicBox);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.PenguinPicBox);
@@ -241,7 +227,6 @@
         #endregion
 
         private System.Windows.Forms.Label Score;
-        private System.Windows.Forms.Label LineLabel;
         private System.Windows.Forms.PictureBox FirePicBox;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.PictureBox PenguinPicBox;

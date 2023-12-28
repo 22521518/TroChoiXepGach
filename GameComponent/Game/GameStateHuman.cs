@@ -97,11 +97,12 @@ namespace GameComponent.Game
             if (!IsPositionLegit())
             {
                 Human.Jump(g);
-                Human.Landed();
                 return false;
             }
             if (HitYourHead() && Math.Abs(Human.JumpSteps) > 1)
+            {
                 return false;
+            }
             if (IsGameOver(true))
             {
                 return false;
@@ -110,18 +111,21 @@ namespace GameComponent.Game
         }
         public bool IsOnLand()
         {
+            if (Human.JumpSteps != 0)
+                return false;
+
             if (Human.Body[0].Row == Grid.Row - 1)
                 return true;
 
             int RowBeneath, ColumnBeneath;
             int RowBeneath1, ColumnBeneath1;
+            
             RowBeneath = Human.Body[0].Row + 1;
             ColumnBeneath = Human.Body[0].Column;
             RowBeneath1 = Human.Body[1].Row + 1;
             ColumnBeneath1 = Human.Body[1].Column;
 
-            Human.IsLanded = !Grid.IsEmpty(RowBeneath, ColumnBeneath) || !Grid.IsEmpty(RowBeneath1, ColumnBeneath1);
-            return Human.IsLanded;
+            return !Grid.IsEmpty(RowBeneath, ColumnBeneath) || !Grid.IsEmpty(RowBeneath1, ColumnBeneath1);
         }
         public bool Fall(int g)
         {

@@ -11,9 +11,8 @@ namespace GameComponent.Game
     {
         public readonly int[][] SpeedBlockDrop = new int[][]
         { 
-            new int[] {6, 5, 4, 3 , -2},
+            new int[] {6, 5, 4, 3 , 2},
             new int[] {12, 11, 10, 8, 6},
-        
         };
         protected Block _currentblock;
         public int Level = 0;
@@ -39,6 +38,7 @@ namespace GameComponent.Game
             Queue = new QueueBlock();
             _currentblock = Queue.GetBlock(random);
             GameOver = false;
+            Hold = null;
         }
         abstract public bool IsGameOver(bool isMove);
         abstract public int PlaceBlock();
@@ -64,7 +64,6 @@ namespace GameComponent.Game
         public void ClearRow()
         {
             int row = Grid.ClearFullRow();
-            Console.WriteLine(row.ToString());
             Score += ComboScore[row - 1];
             Line += row;
             if (Line > 100)

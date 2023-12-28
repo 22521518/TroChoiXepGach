@@ -45,7 +45,7 @@ namespace WindowForm
 
             ScoreLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 28, FontStyle.Bold);
             Score.Font = new Font(MainWindow.cFont.Font, 26, FontStyle.Regular);
-            Line.Font = LineLabel.Font = new Font(MainWindow.cFont.Font, 18, FontStyle.Regular);
+            Line.Font  = new Font(MainWindow.cFont.Font, 18, FontStyle.Regular);
 
             GridX = WallLeft.Width;
             GridY = Ground.Location.Y - CellSize * 22 + 5;
@@ -59,14 +59,23 @@ namespace WindowForm
                 case GameMode.Classic:
                     GamePlay = new GameStateClassic();
                     Speed = 6;
+                    Score.Visible = true;
+                    ScoreLabel.Visible = true;
+                    Line.Visible = true;
                     break;
                 case GameMode.Human:
                     GamePlay = new GameStateHuman();
                     Speed = 12;
+                    Score.Visible = true;
+                    ScoreLabel.Visible = true;
+                    Line.Visible = true;
                     break;
                 case GameMode.PvP: 
                     GamePlay = new GameStatePvP();
                     Speed = 12;
+                    Score.Visible = false;
+                    ScoreLabel.Visible = false;
+                    Line.Visible = false;
                     break;
                 default: break;
             }
@@ -81,7 +90,7 @@ namespace WindowForm
             BlockMovingRight = false;
 
             Score.Text = GamePlay.Score.ToString();
-            Line.Text = GamePlay.Line.ToString();
+            Line.Text = $"Line: {GamePlay.Line}";
         }
         private void GameplayForm_Paint(object sender, PaintEventArgs e)
         {
@@ -139,7 +148,11 @@ namespace WindowForm
                     new Rectangle(ColumnHuman * 36, RowHuman * 55, 36, 55), GraphicsUnit.Pixel);
             }
             if (GamePlay.Hold == null)
+            {
+
+                BlockBox.BackColor = Color.Black;
                 BlockBox.Image = null;
+            }
             else
                 //BlockBox.Image = Image.FromFile(@"");
                 BlockBox.BackColor = Color.White;
@@ -246,7 +259,7 @@ namespace WindowForm
                     break;
                 case Keys.Up:
                 case Keys.W:
-                    if (gthuman.Human.IsLanded)
+                    if (gthuman.IsOnLand())
                     {
                         HumanJump = 4;
                     }
@@ -278,7 +291,7 @@ namespace WindowForm
                     HumanMovingRight = true;
                     break;
                 case Keys.Up:
-                    if (gspvp.Human.IsLanded)
+                    if (gspvp.IsOnLand())
                     {
                         HumanJump = 4;
                     }
@@ -415,7 +428,8 @@ namespace WindowForm
                 {
                     if (!gshuman.Jump(1))
                     {
-                        HumanJump = 0;
+                        HumanJump = 1;
+                        break;
                     }
                 }
                 HumanJump--;
@@ -423,13 +437,13 @@ namespace WindowForm
             else if (!gshuman.IsOnLand())
             {
                 //Human animation
+                ColumnHuman = 13 + 4 + HumanFall % 2;
                 for (int i = 0; i < HumanFall; i++)
                 {
-                    ColumnHuman = 13 + 4 + HumanFall % 2;
                     if (!gshuman.Fall(1))
                     {
-                        HumanFall = 1;
                         ColumnHuman = 12;
+                        HumanFall = 0;
                     }
                 }
                 HumanFall = HumanFall > 2 ? HumanFall : HumanFall + 1;
@@ -438,7 +452,7 @@ namespace WindowForm
             {
                 //Direction for human animation
                 RowHuman = 0;
-                if (gshuman.Human.IsLanded)
+                if (gshuman.IsOnLand())
                 {
                     //Human animation
                     ColumnHuman = (ColumnHuman + 1) % 13;
@@ -449,7 +463,7 @@ namespace WindowForm
             {
                 //Direction for human animation
                 RowHuman = 1;
-                if (gshuman.Human.IsLanded)
+                if (gshuman.IsOnLand())
                 {
                     //Human animation
                     ColumnHuman = (ColumnHuman + 1) % 13;
@@ -510,7 +524,7 @@ namespace WindowForm
             {
                 //Direction for human animation
                 RowHuman = 0;
-                if (gspvp.Human.IsLanded)
+                if (gspvp.IsOnLand())
                 {
                     //Human animation
                     ColumnHuman = (ColumnHuman + 1) % 13;
@@ -521,7 +535,7 @@ namespace WindowForm
             {
                 //Direction for human animation
                 RowHuman = 1;
-                if (gspvp.Human.IsLanded)
+                if (gspvp.IsOnLand())
                 {
                     //Human animation
                     ColumnHuman = (ColumnHuman + 1) % 13;
@@ -547,7 +561,7 @@ namespace WindowForm
                     e.IsInputKey = true;
                     break;
                 case Keys.Alt:
-                    e.IsInputKey =true; 
+                    e.IsInputKey = false; 
                     break;
             }
         }
@@ -579,7 +593,7 @@ namespace WindowForm
                 GamePlay.ClearRow();
                 Speed = GamePlay.SpeedBlockDrop[(int) Mode][GamePlay.Level];
                 Score.Text = GamePlay.Score.ToString();
-                Line.Text = GamePlay.Line.ToString();
+                Line.Text = $"Line: {GamePlay.Line}";
                 Clear.Stop();
                 MoveTimer.Start();
             }

@@ -49,7 +49,7 @@ namespace WindowForm
 
         public static void BackHome()
         {
-            menuForm.StartPosition = FormStartPosition.CenterParent;
+            menuForm.StartPosition = FormStartPosition.CenterScreen;
             menuForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             menuForm.Show();
             menuForm.KeyPreview = true;

@@ -10,15 +10,15 @@ namespace GameComponent.Game.Object
     {
         readonly int ratio = 4;
         public Position[] Body = new Position[4];
+        private bool _islanded = true;
         int _steps = 0, _jumpsteps = 0;
         public int Steps { get => _steps; }
         public int JumpSteps { get => _jumpsteps; }
-        public bool IsLanded = true;
         public bool IsLeft { get; private set; }
         public Character(int x = 21, int y = 4)
         {
             IsLeft = true;
-            IsLanded = true;
+            _islanded = true;
             Body[0] = Body[1] = Body[2] = Body[3] = new Position(x, y);
         }
         public Character(Character other)
@@ -26,7 +26,7 @@ namespace GameComponent.Game.Object
             for (int i = 0; i < 4; i++)
                 this.Body[i] = new Position(other.Body[i]);
 
-            this.IsLanded = other.IsLanded;
+            this._islanded = other._islanded;
         }
         public IEnumerable<Position> PositionInTiles()
         {
@@ -86,7 +86,7 @@ namespace GameComponent.Game.Object
         }
         public void Jump(int y)
         {
-            IsLanded = false;
+            _islanded = false;
             if ((_jumpsteps + y) % ratio == 0 && _jumpsteps + y != 0)
             {
                 if (_steps != 0) 
@@ -118,7 +118,7 @@ namespace GameComponent.Game.Object
         }
         public void Landed()
         {
-            IsLanded = true;
+            _islanded = true;
             _jumpsteps = 0;
             if (_steps != 0)
                 Body[3] = Body[1];
