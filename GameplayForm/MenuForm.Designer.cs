@@ -63,9 +63,11 @@
             // SettingIcon
             // 
             this.SettingIcon.BackColor = System.Drawing.Color.Transparent;
+            this.SettingIcon.Image = ((System.Drawing.Image)(resources.GetObject("SettingIcon.Image")));
             this.SettingIcon.Location = new System.Drawing.Point(702, 0);
             this.SettingIcon.Name = "SettingIcon";
             this.SettingIcon.Size = new System.Drawing.Size(64, 64);
+            this.SettingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SettingIcon.TabIndex = 2;
             this.SettingIcon.TabStop = false;
             this.SettingIcon.Click += new System.EventHandler(this.SettingIcon_Click);
@@ -73,9 +75,11 @@
             // LeaderBoardIcon
             // 
             this.LeaderBoardIcon.BackColor = System.Drawing.Color.Transparent;
+            this.LeaderBoardIcon.Image = ((System.Drawing.Image)(resources.GetObject("LeaderBoardIcon.Image")));
             this.LeaderBoardIcon.Location = new System.Drawing.Point(783, 0);
             this.LeaderBoardIcon.Name = "LeaderBoardIcon";
             this.LeaderBoardIcon.Size = new System.Drawing.Size(64, 64);
+            this.LeaderBoardIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LeaderBoardIcon.TabIndex = 3;
             this.LeaderBoardIcon.TabStop = false;
             this.LeaderBoardIcon.Click += new System.EventHandler(this.LeaderBoardIcon_Click);

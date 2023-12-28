@@ -45,7 +45,7 @@ namespace WindowForm
         async private void StartLabel_Click(object sender, EventArgs e)
         {
             MainWindow.Music.MouseEffect.controls.play();
-            await Task.Delay(MainWindow.Music.MouseEffectDuration / 5);
+            await Task.Delay(MainWindow.Music.MouseEffectDuration);
             MainWindow.Music.MouseEffect.controls.pause();
 
 

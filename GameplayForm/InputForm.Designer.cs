@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputForm));
             this.TitleLabel = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
             this.ConfirmButton = new System.Windows.Forms.Button();
@@ -71,11 +72,13 @@
             // 
             // CloseIcon
             // 
-            this.CloseIcon.BackColor = System.Drawing.Color.White;
+            this.CloseIcon.BackColor = System.Drawing.Color.Transparent;
+            this.CloseIcon.Image = ((System.Drawing.Image)(resources.GetObject("CloseIcon.Image")));
             this.CloseIcon.Location = new System.Drawing.Point(549, 0);
             this.CloseIcon.Margin = new System.Windows.Forms.Padding(0);
             this.CloseIcon.Name = "CloseIcon";
             this.CloseIcon.Size = new System.Drawing.Size(32, 32);
+            this.CloseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CloseIcon.TabIndex = 4;
             this.CloseIcon.TabStop = false;
             this.CloseIcon.Click += new System.EventHandler(this.CloseIcon_Click);

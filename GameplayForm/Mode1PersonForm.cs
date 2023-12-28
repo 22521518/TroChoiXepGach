@@ -17,7 +17,7 @@ namespace WindowForm
             InitializeComponent();
 
             TitleLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 30, FontStyle.Bold);
-            ClassicModeButton.Font = HumanModeButton.Font = ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 20, FontStyle.Regular);
+            ClassicModeButton.Font = HumanModeButton.Font = ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 10, FontStyle.Regular);
 
             HumanModeButton.DialogResult = DialogResult.OK;
             ClassicModeButton.DialogResult = DialogResult.Yes;
