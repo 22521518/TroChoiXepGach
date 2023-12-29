@@ -22,7 +22,7 @@ namespace WindowForm
             TitleLabel.Font = new Font (MainWindow.cFont.Alkhemikal, 15, FontStyle.Bold);
 
             ModeFilterLabel.Font = CloseButton.Font = AllModeButton.Font = ModeHumanFilterButton.Font = ModeClassicFilterButton.Font = new Font (MainWindow.cFont.Alkhemikal, 13, FontStyle.Regular);
-            NameFilterLabel.Font = NameFilterButton.Font = new Font (MainWindow.cFont.Alkhemikal, 10, FontStyle.Regular);
+            PlayerBoardButton.Font = NameFilterLabel.Font = NameFilterButton.Font = new Font (MainWindow.cFont.Alkhemikal, 10, FontStyle.Regular);
             LeaderBoard.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font(MainWindow.cFont.Alkhemikal, 20, System.Drawing.FontStyle.Bold);
             LeaderBoard.DefaultCellStyle.Font = new System.Drawing.Font(MainWindow.cFont.Alkhemikal, 13, System.Drawing.FontStyle.Bold);
 
