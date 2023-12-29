@@ -18,7 +18,7 @@ namespace WindowForm
             InitializeComponent();
 
             TitleLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 30, FontStyle.Bold);
-            OnePersonButton.Font = TwoPersonButton.Font = ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 20, FontStyle.Regular);
+            OnePersonButton.Font = TwoPersonButton.Font = ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 12, FontStyle.Regular);
 
         }
 
