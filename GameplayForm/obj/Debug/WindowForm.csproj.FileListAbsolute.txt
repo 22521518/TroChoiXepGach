@@ -66,3 +66,5 @@ D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\bin\Debug\System.Data.SQLite
 D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\WindowForm.csproj.CopyComplete
 D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\WindowForm.exe
 D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\WindowForm.pdb
+D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\WindowForm.GuideForm.resources
+D:\Mã\LapTrinhTrucQuan\TroChoiXepGach\GameplayForm\obj\Debug\Interop.MediaPlayer.dll

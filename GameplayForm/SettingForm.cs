@@ -16,15 +16,13 @@ namespace WindowForm
         public SettingForm(int MusicValue, int EffectValue)
         {
             InitializeComponent();
-            TitleLabel.Font = new Font(cFont.Alkhemikal, 40, FontStyle.Bold);
-            MusicLabel.Font = EffectLabel.Font = new Font(cFont.Alkhemikal, 13, FontStyle.Regular);
+            TitleLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 40, FontStyle.Bold);
+            MusicLabel.Font = EffectLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 13, FontStyle.Regular);
             ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 20, FontStyle.Regular);
 
             MusicTrackBar.Value = MusicValue / 10;
             EffectTrackBar.Value = EffectValue / 10;
         }
-
-        CustomFont cFont = new CustomFont();
 
         private void EffectTrackBar_Scroll(object sender, EventArgs e)
         {
