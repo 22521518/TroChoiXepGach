@@ -51,5 +51,11 @@ namespace WindowForm
         {
             MainWindow.OpenMenuWindow(this);
         }
+
+        private void GuideIcon_Click(object sender, EventArgs e)
+        {
+            GuideForm guideForm = new GuideForm();
+            guideForm.ShowDialog();
+        }
     }
 }

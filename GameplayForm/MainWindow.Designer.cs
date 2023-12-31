@@ -38,12 +38,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(877, 823);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 43.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(17);
-            this.MaximumSize = new System.Drawing.Size(895, 870);
-            this.MinimumSize = new System.Drawing.Size(895, 870);
             this.Name = "MainWindow";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -15,7 +15,7 @@ namespace WindowForm
         public GuideForm()
         {
             InitializeComponent();
-            TitleLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 30, FontStyle.Bold);
+            TitleLabel.Font = new Font(MainWindow.cFont.Alkhemikal, 21, FontStyle.Bold);
             ClassicBtn.Font = EscapeBtn.Font = PvPBtn.Font = new Font(MainWindow.cFont.Alkhemikal, 16, FontStyle.Bold);
             foreach (TabPage tb in tabControl1.TabPages)
             {

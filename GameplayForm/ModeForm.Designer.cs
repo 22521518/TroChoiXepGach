@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModeForm));
             this.TwoPersonButton = new System.Windows.Forms.Button();
             this.OnePersonButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.TitleLabel = new System.Windows.Forms.Label();
+            this.GuideIcon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.GuideIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // TwoPersonButton
@@ -85,12 +88,25 @@
             this.TitleLabel.Text = "MODE";
             this.TitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // GuideIcon
+            // 
+            this.GuideIcon.BackColor = System.Drawing.Color.Transparent;
+            this.GuideIcon.Image = ((System.Drawing.Image)(resources.GetObject("GuideIcon.Image")));
+            this.GuideIcon.Location = new System.Drawing.Point(18, 243);
+            this.GuideIcon.Name = "GuideIcon";
+            this.GuideIcon.Size = new System.Drawing.Size(36, 36);
+            this.GuideIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GuideIcon.TabIndex = 24;
+            this.GuideIcon.TabStop = false;
+            this.GuideIcon.Click += new System.EventHandler(this.GuideIcon_Click);
+            // 
             // ModeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(43F, 83F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(562, 290);
+            this.Controls.Add(this.GuideIcon);
             this.Controls.Add(this.TwoPersonButton);
             this.Controls.Add(this.OnePersonButton);
             this.Controls.Add(this.ExitButton);
@@ -102,6 +118,7 @@
             this.Name = "ModeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ModeForm";
+            ((System.ComponentModel.ISupportInitialize)(this.GuideIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -112,5 +129,6 @@
         private System.Windows.Forms.Button OnePersonButton;
         private System.Windows.Forms.Button ExitButton;
         private System.Windows.Forms.Label TitleLabel;
+        private System.Windows.Forms.PictureBox GuideIcon;
     }
 }

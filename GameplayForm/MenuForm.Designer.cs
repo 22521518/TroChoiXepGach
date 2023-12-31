@@ -33,8 +33,10 @@
             this.StartLabel = new System.Windows.Forms.Label();
             this.SettingIcon = new System.Windows.Forms.PictureBox();
             this.LeaderBoardIcon = new System.Windows.Forms.PictureBox();
+            this.GuideIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SettingIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaderBoardIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GuideIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // TitleLabel
@@ -84,12 +86,25 @@
             this.LeaderBoardIcon.TabStop = false;
             this.LeaderBoardIcon.Click += new System.EventHandler(this.LeaderBoardIcon_Click);
             // 
+            // GuideIcon
+            // 
+            this.GuideIcon.BackColor = System.Drawing.Color.Transparent;
+            this.GuideIcon.Image = ((System.Drawing.Image)(resources.GetObject("GuideIcon.Image")));
+            this.GuideIcon.Location = new System.Drawing.Point(621, 0);
+            this.GuideIcon.Name = "GuideIcon";
+            this.GuideIcon.Size = new System.Drawing.Size(64, 64);
+            this.GuideIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.GuideIcon.TabIndex = 4;
+            this.GuideIcon.TabStop = false;
+            this.GuideIcon.Click += new System.EventHandler(this.GuideIcon_Click);
+            // 
             // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(43F, 83F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(849, 783);
+            this.Controls.Add(this.GuideIcon);
             this.Controls.Add(this.LeaderBoardIcon);
             this.Controls.Add(this.SettingIcon);
             this.Controls.Add(this.StartLabel);
@@ -104,6 +119,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.SettingIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaderBoardIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GuideIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,5 +130,6 @@
         private System.Windows.Forms.Label StartLabel;
         private System.Windows.Forms.PictureBox SettingIcon;
         private System.Windows.Forms.PictureBox LeaderBoardIcon;
+        private System.Windows.Forms.PictureBox GuideIcon;
     }
 }

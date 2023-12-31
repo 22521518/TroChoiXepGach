@@ -40,11 +40,15 @@ namespace WindowForm
                 }
             }
             
-            menuForm.MdiParent = this;
             modeForm.MdiParent = this;
             gameplayForm.MdiParent = this;
+            menuForm.MdiParent = this;
 
-            BackHome();
+
+            menuForm.StartPosition = FormStartPosition.Manual;
+            menuForm.Location = new Point(this.Location.X + (this.Width - menuForm.Width) / 2, this.Location.Y + (this.Height - menuForm.Height) / 2);
+            menuForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            menuForm.Show();
         }
 
         public static void BackHome()
@@ -55,10 +59,8 @@ namespace WindowForm
             menuForm.KeyPreview = true;
 
             gameplayForm.Hide();
-            gameplayForm.KeyPreview = false;
             
             modeForm.Hide();
-            modeForm.KeyPreview = false;
 
         }
         static void OpenForm(Form src, Form dest)
