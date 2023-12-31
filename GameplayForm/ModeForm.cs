@@ -31,7 +31,7 @@ namespace WindowForm
             if (Result != DialogResult.Cancel)
             {
                 if (Result == DialogResult.OK)
-                    MainWindow.user.ModeID = GameMode.Human;
+                    MainWindow.user.ModeID = GameMode.Escape;
                 else if (Result == DialogResult.Yes)
                     MainWindow.user.ModeID = GameMode.Classic;
 

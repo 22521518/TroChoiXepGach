@@ -40,10 +40,11 @@
             this.Ground = new System.Windows.Forms.PictureBox();
             this.MoveTimer = new System.Windows.Forms.Timer(this.components);
             this.BlockBox = new System.Windows.Forms.PictureBox();
-            this.DelayKey = new System.Windows.Forms.Timer(this.components);
             this.PlaceBlock = new System.Windows.Forms.Timer(this.components);
             this.Clear = new System.Windows.Forms.Timer(this.components);
             this.Line = new System.Windows.Forms.Label();
+            this.PauseIcon = new System.Windows.Forms.PictureBox();
+            this.SettingIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.FirePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PenguinPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScorePicture)).BeginInit();
@@ -51,6 +52,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.WallLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlockBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PauseIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // Score
@@ -150,13 +153,9 @@
             this.BlockBox.Location = new System.Drawing.Point(537, 553);
             this.BlockBox.Name = "BlockBox";
             this.BlockBox.Size = new System.Drawing.Size(128, 128);
+            this.BlockBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.BlockBox.TabIndex = 28;
             this.BlockBox.TabStop = false;
-            // 
-            // DelayKey
-            // 
-            this.DelayKey.Interval = 1;
-            this.DelayKey.Tick += new System.EventHandler(this.DelayKey_Tick);
             // 
             // PlaceBlock
             // 
@@ -180,12 +179,36 @@
             this.Line.Text = "0";
             this.Line.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // PauseIcon
+            // 
+            this.PauseIcon.Image = ((System.Drawing.Image)(resources.GetObject("PauseIcon.Image")));
+            this.PauseIcon.Location = new System.Drawing.Point(711, 758);
+            this.PauseIcon.Name = "PauseIcon";
+            this.PauseIcon.Size = new System.Drawing.Size(30, 30);
+            this.PauseIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PauseIcon.TabIndex = 30;
+            this.PauseIcon.TabStop = false;
+            this.PauseIcon.Click += new System.EventHandler(this.PauseIcon_Click);
+            // 
+            // SettingIcon
+            // 
+            this.SettingIcon.Image = ((System.Drawing.Image)(resources.GetObject("SettingIcon.Image")));
+            this.SettingIcon.Location = new System.Drawing.Point(666, 758);
+            this.SettingIcon.Name = "SettingIcon";
+            this.SettingIcon.Size = new System.Drawing.Size(30, 30);
+            this.SettingIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SettingIcon.TabIndex = 31;
+            this.SettingIcon.TabStop = false;
+            this.SettingIcon.Click += new System.EventHandler(this.SettingIcon_Click);
+            // 
             // GameplayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(40F, 97F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(765, 800);
+            this.Controls.Add(this.SettingIcon);
+            this.Controls.Add(this.PauseIcon);
             this.Controls.Add(this.Line);
             this.Controls.Add(this.BlockBox);
             this.Controls.Add(this.Score);
@@ -220,6 +243,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.WallLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ground)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BlockBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PauseIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,10 +261,11 @@
         private System.Windows.Forms.PictureBox Ground;
         public System.Windows.Forms.Timer MoveTimer;
         private System.Windows.Forms.PictureBox BlockBox;
-        private System.Windows.Forms.Timer DelayKey;
         private System.Windows.Forms.Timer PlaceBlock;
         private System.Windows.Forms.Timer Clear;
         private System.Windows.Forms.Label Line;
+        private System.Windows.Forms.PictureBox PauseIcon;
+        private System.Windows.Forms.PictureBox SettingIcon;
     }
 }
 

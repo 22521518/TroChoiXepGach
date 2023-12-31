@@ -63,7 +63,7 @@ namespace WindowForm
                     ScoreLabel.Visible = true;
                     Line.Visible = true;
                     break;
-                case GameMode.Human:
+                case GameMode.Escape:
                     GamePlay = new GameStateHuman();
                     Speed = 12;
                     Score.Visible = true;
@@ -149,13 +149,10 @@ namespace WindowForm
             }
             if (GamePlay.Hold == null)
             {
-
-                BlockBox.BackColor = Color.Black;
                 BlockBox.Image = null;
             }
             else
-                //BlockBox.Image = Image.FromFile(@"");
-                BlockBox.BackColor = Color.White;
+                BlockBox.Image = Img.FullBlock[GamePlay.Hold.Id - 1];
         }
         private void GameplayForm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -405,7 +402,7 @@ namespace WindowForm
                 }
                 switch(Mode)
                 {
-                    case GameMode.Human:
+                    case GameMode.Escape:
                         HandleAnimationHuman(GamePlay);
                         break;
                     case GameMode.PvP:
@@ -550,6 +547,28 @@ namespace WindowForm
             MoveTimer.Enabled = true;
         }
 
+        private void PauseIcon_Click(object sender, EventArgs e)
+        {
+            MoveTimer.Stop();
+            DialogResult res = MessageBox.Show("Do you want to quit", "Pause", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (res == DialogResult.OK)
+            {
+                InitializeGame();
+                this.Hide();
+                MainWindow.OpenMenuWindow(this);
+            }
+            else
+                MoveTimer.Start();
+        }
+
+        private void SettingIcon_Click(object sender, EventArgs e)
+        {
+            MoveTimer.Stop();
+            SettingForm settingform = new SettingForm(MainWindow.Music.MenuBackground.settings.volume, MainWindow.Music.MouseEffect.settings.volume);
+            settingform.ShowDialog();
+            MoveTimer.Start();
+        }
+
         private void GameplayForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
@@ -570,11 +589,6 @@ namespace WindowForm
         {
             MoveTimer.Enabled = false;
         }
-
-        private void DelayKey_Tick(object sender, EventArgs e)
-        {
-
-        }
         private void PlaceBlock_Tick(object sender, EventArgs e)
         {
             int row = GamePlay.PlaceBlock();
@@ -587,9 +601,9 @@ namespace WindowForm
         }
         private void Clear_Tick(object sender, EventArgs e)
         {
-            if (CurrentFrame >= 5)
+            if (Current >= 5)
             {
-                CurrentFrame = 0;
+                Current = 0;
                 GamePlay.ClearRow();
                 Speed = GamePlay.SpeedBlockDrop[(int) Mode][GamePlay.Level];
                 Score.Text = GamePlay.Score.ToString();
@@ -600,7 +614,7 @@ namespace WindowForm
             else
             {
                 GamePlay.Grid.MarkedFullRow();
-                CurrentFrame++;
+                Current++;
             }
             Invalidate();
         }

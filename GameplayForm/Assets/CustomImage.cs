@@ -12,6 +12,18 @@ namespace WindowForm.Assets
         Bitmap _blockground = new Bitmap(@".\assets\character\BlockGround.png");
         Bitmap _blockblur = new Bitmap(@".\assets\character\BlockGround.png");
         Bitmap _human = new Bitmap(@".\assets\character\movements-sprite.png");
+        Bitmap[] _fullblock = new Bitmap[]
+        {
+            new Bitmap(@"assets\character\I-block.png"),
+            new Bitmap(@"assets\character\J-block.png"),
+            new Bitmap(@"assets\character\L-block.png"),
+            new Bitmap(@"assets\character\O-block.png"),
+            new Bitmap(@"assets\character\S-block.png"),
+            new Bitmap(@"assets\character\T-block.png"),
+            new Bitmap(@"assets\character\Z-block.png"),
+            new Bitmap(@"assets\character\dote-block.png"),
+        };
+        public Image[] FullBlock { get => _fullblock; }
         public Image BlockGround { get => _blockground; }
         public Image BlockGroundBlur { get => _blockblur; }
         public Image Human { get => _human; }

@@ -10,7 +10,7 @@ namespace GameComponent.Game
     public class QueueBlock
     {
         private readonly Block[] queue = new Block[]
-       {
+        {
             new IBlock(),
             new JBlock(),
             new LBlock(),
@@ -18,7 +18,21 @@ namespace GameComponent.Game
             new SBlock(),
             new TBlock(),
             new ZBlock()
-       };
+        };
+        public Block GetBlockId(int id)
+        {
+            switch (id)
+            {
+                case 0: return new IBlock();
+                case 1: return new JBlock();
+                case 2: return new LBlock();
+                case 3: return new OBlock();
+                case 4: return new SBlock();
+                case 5: return new TBlock();
+                case 6: return new ZBlock();
+            }
+            return null;
+        }
         readonly Random random = new Random();
         public Block NextBlock { get; set; }
         public QueueBlock()

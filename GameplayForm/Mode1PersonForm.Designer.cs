@@ -46,7 +46,7 @@
             this.HumanModeButton.Name = "HumanModeButton";
             this.HumanModeButton.Size = new System.Drawing.Size(162, 45);
             this.HumanModeButton.TabIndex = 27;
-            this.HumanModeButton.Text = "HUMAN";
+            this.HumanModeButton.Text = "ESCAPE";
             this.HumanModeButton.UseVisualStyleBackColor = true;
             // 
             // ClassicModeButton

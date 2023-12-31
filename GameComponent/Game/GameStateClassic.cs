@@ -65,6 +65,10 @@ namespace GameComponent.Game
             else
             {
                 _currentblock = Queue.GetBlock();
+                while (Hold != null && _currentblock.Id == Hold.Id)
+                {
+                    _currentblock = Queue.GetBlock();
+                }    
             }
 
             return Grid.MarkedFullRow();
@@ -94,6 +98,7 @@ namespace GameComponent.Game
             if (Hold != null)
                 return;
             Hold = _currentblock;
+            Hold.Reset();
             _currentblock = Queue.GetBlock();
         }
         public void ChangeBlock()
@@ -101,6 +106,7 @@ namespace GameComponent.Game
             if (Hold == null)
                 return;
             Queue.NextBlock = _currentblock;
+            Queue.NextBlock.Reset();
             _currentblock = Hold;
             Hold = null;
         }

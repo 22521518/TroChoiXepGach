@@ -42,6 +42,8 @@
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(17);
+            this.MaximumSize = new System.Drawing.Size(895, 870);
+            this.MinimumSize = new System.Drawing.Size(895, 870);
             this.Name = "MainWindow";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

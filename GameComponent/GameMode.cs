@@ -9,7 +9,7 @@ namespace GameComponent
     public enum GameMode
     {
         Classic,
-        Human,
+        Escape,
         PvP
     }
 }

@@ -55,7 +55,7 @@ namespace GameComponent.Player
 
                     command.CommandText = $"INSERT INTO MODE (MODE_ID, MODE_NAME) VALUES ({(int)GameMode.Classic}, 'Classic')";
                     command.ExecuteNonQuery();
-                    command.CommandText = $"INSERT INTO MODE (MODE_ID, MODE_NAME) VALUES ({(int)GameMode.Human}, 'Human')";
+                    command.CommandText = $"INSERT INTO MODE (MODE_ID, MODE_NAME) VALUES ({(int)GameMode.Escape}, 'Human')";
                     command.ExecuteNonQuery();
                     command.CommandText = $"INSERT INTO MODE (MODE_ID, MODE_NAME) VALUES ({(int)GameMode.PvP}, 'PvP')";
                     command.ExecuteNonQuery();
@@ -93,7 +93,7 @@ namespace GameComponent.Player
             _playerboard = GetData("SELECT PLAYER_ID AS ID, PLAYER_NAME AS NAME FROM PLAYER");
             _scoreboard = GetData("SELECT PLAYER_NAME AS NAME, SCORE, MODE_NAME AS MODE FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.PLAYER_ID = SCOREBOARD.PLAYER_ID INNER JOIN MODE ON SCOREBOARD.MODE_ID = MODE.MODE_ID ORDER BY SCORE DESC");
             _modeclassicboard = GetData($"SELECT PLAYER_NAME AS NAME, SCORE, MODE_NAME AS MODE FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.PLAYER_ID = SCOREBOARD.PLAYER_ID INNER JOIN MODE ON SCOREBOARD.MODE_ID = MODE.MODE_ID WHERE MODE.MODE_ID = {(int)GameMode.Classic} ORDER BY SCORE DESC");
-            _modehumanboard = GetData($"SELECT PLAYER_NAME AS NAME, SCORE, MODE_NAME AS MODE FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.PLAYER_ID = SCOREBOARD.PLAYER_ID INNER JOIN MODE ON SCOREBOARD.MODE_ID = MODE.MODE_ID WHERE MODE.MODE_ID = {(int)GameMode.Human} ORDER BY SCORE DESC");
+            _modehumanboard = GetData($"SELECT PLAYER_NAME AS NAME, SCORE, MODE_NAME AS MODE FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.PLAYER_ID = SCOREBOARD.PLAYER_ID INNER JOIN MODE ON SCOREBOARD.MODE_ID = MODE.MODE_ID WHERE MODE.MODE_ID = {(int)GameMode.Escape} ORDER BY SCORE DESC");
         }
     }
 }
