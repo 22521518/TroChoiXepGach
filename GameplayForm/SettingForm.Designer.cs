@@ -59,6 +59,7 @@
             this.MusicTrackBar.Size = new System.Drawing.Size(414, 56);
             this.MusicTrackBar.TabIndex = 10;
             this.MusicTrackBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.MusicTrackBar.Scroll += new System.EventHandler(this.MusicTrackBar_Scroll);
             // 
             // MusicLabel
             // 
@@ -67,7 +68,7 @@
             this.MusicLabel.ForeColor = System.Drawing.Color.White;
             this.MusicLabel.Location = new System.Drawing.Point(9, 162);
             this.MusicLabel.Name = "MusicLabel";
-            this.MusicLabel.Size = new System.Drawing.Size(100, 23);
+            this.MusicLabel.Size = new System.Drawing.Size(126, 23);
             this.MusicLabel.TabIndex = 9;
             this.MusicLabel.Text = "Sound";
             this.MusicLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,6 +83,7 @@
             this.EffectTrackBar.Size = new System.Drawing.Size(414, 56);
             this.EffectTrackBar.TabIndex = 8;
             this.EffectTrackBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.EffectTrackBar.Scroll += new System.EventHandler(this.EffectTrackBar_Scroll);
             // 
             // EffectLabel
             // 
@@ -90,7 +92,7 @@
             this.EffectLabel.ForeColor = System.Drawing.Color.White;
             this.EffectLabel.Location = new System.Drawing.Point(9, 99);
             this.EffectLabel.Name = "EffectLabel";
-            this.EffectLabel.Size = new System.Drawing.Size(100, 23);
+            this.EffectLabel.Size = new System.Drawing.Size(126, 23);
             this.EffectLabel.TabIndex = 7;
             this.EffectLabel.Text = "Effect";
             this.EffectLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
