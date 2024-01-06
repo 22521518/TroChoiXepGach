@@ -25,6 +25,10 @@ namespace WindowForm
 
             PlayAgainButton.Font = ExitButton.Font = new Font(MainWindow.cFont.Alkhemikal, 18, FontStyle.Regular);
 
+            MainWindow.user.Score = score;
+            MainWindow.writerSQL.InsertNewScore(MainWindow.user);
+            MainWindow.readerSQL.UpdateData();
+
             ModeLabel.Text = mode.ToString();
             NameLabel.Text = $"Name: {name}";
             Score.Text = score.ToString();

@@ -33,6 +33,7 @@ namespace WindowForm
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             MainWindow.user = new Player(NameTextBox.Text == "" ? "anonymous" : NameTextBox.Text);
+            MainWindow.readerSQL.UpdateData();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace GameComponent.Player
                     connect.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(connect))
                     {
-                        cmd.CommandText = $"INSERT INTO SCOREBOARD (PLAYERID, SCORE, MODEID) VALUES ({User.ID}, {User.Score}, {User.ModeID})";
+                        cmd.CommandText = $"INSERT INTO SCOREBOARD (PLAYER_ID, SCORE, MODE_ID) VALUES ({User.ID}, {User.Score}, {(int)User.ModeID})";
                         cmd.ExecuteNonQuery();
                     }
                 }
